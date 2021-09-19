@@ -37,8 +37,8 @@ module.exports = {
         name: `Alex TV`,
         short_name: `AlexTV`,
         start_url: `/`,
-        background_color: `#051d40`,
-        theme_color: `#ffde59`,
+        theme_color: `#051d40`,
+        background_color: `#ffde59`,
         display: `standalone`,
         icons: [
           {
