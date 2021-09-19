@@ -8,7 +8,7 @@ const siteMetadata = {
   titleTemplate: "Alex TV · %s ",
   description: "Alex Tv - La TV italiano che rivogliamo indietro!!",
   siteUrl: "https://alextv.netlify.app", // No trailing slash allowed!
-  image: "/images/ALEXtv.png", // Path to your image you placed in the 'static' folder
+  image: "/ALEXtv.png", // Path to your image you placed in the 'static' folder
   twitterUsername: "@PaoroCatarano",
   siteLanguage: `it`,
   siteLocale: `it`,
@@ -42,12 +42,12 @@ module.exports = {
         display: `standalone`,
         icons: [
           {
-            src: "./static/android-chrome-192x192.png",
+            src: "/android-chrome-192x192.png",
             sizes: "192x192",
             type: "image/png",
           },
           {
-            src: "./static/android-chrome-512x512.png",
+            src: "/android-chrome-512x512.png",
             sizes: "512x512",
             type: "image/png",
           },
