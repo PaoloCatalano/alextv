@@ -36,7 +36,7 @@ const Video = ({ src, title, ...props }) => {
 }
 
 Video.defaultProps = {
-  src: "https://www.youtube.com/embed/-3_Q2v8ckN0",
+  src: "https://www.youtube.com/embed/videoseries?autoplay=1&controls=0&showinfo=0&loop=1&rel=0&listType=playlist&list=PLzc14R1Ecr9CummAOR3Dm9z3CT2iJ07WC",
   title: "Alex TV playlist",
 }
 

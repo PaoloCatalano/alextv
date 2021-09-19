@@ -5,7 +5,7 @@ import Navbar from "./Navbar"
 const Layout = ({ children }) => {
   return (
     <>
-      <Seo />
+      <Seo title="La TV che vogliamo!" />
       <Navbar />
       <main>{children}</main>
       <Footer />

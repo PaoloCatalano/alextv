@@ -60,25 +60,3 @@ export default function Videos() {
     </Layout>
   )
 }
-
-//https://www.youtube.com/embed/?listType=playlist&autoplay=1&loop=1&playlist=M7lc1UVf-VE&color=white
-
-//good
-/*
-https://www.youtube.com/embed/videoseries?autoplay=1&controls=0&showinfo=0&modestbranding=0&loop=1&rel=0&iv_load_policy=3&enablejsapi=1&listType=playlist&list=PLzc14R1Ecr9CummAOR3Dm9z3CT2iJ07WC
-*/
-
-/* 
-https://developers.google.com/youtube/player_parameters?hl=it
-https://developers.google.com/youtube/youtube_player_demo
-*/
-//"No filter selected. Expected one of: id, playlistId"
-
-//BAD req
-//kycd-EPfZ2E,JJTRnUZdR-Q,
-
-/* 
-apiKey: "AIzaSyDvuN5ZzVJxRoXaH-CA9PwrfDQQaRsY9lQ",
-        channelId: "UCaRW_DIcp4n3iDDlvx002dQ",
-*/
-//

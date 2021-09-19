@@ -5,8 +5,9 @@ const Error = () => {
   return (
     <Layout>
       <main>
-        <h1>404 Error</h1>
-        <h3>The page you are looking for doesn't exist.</h3>
+        <h1 style={{ textAlign: "center", color: "var(--yellow-logo)" }}>
+          Sorry, this page doesn't exist.
+        </h1>
         <Link to="/" className="btn">
           home
         </Link>
