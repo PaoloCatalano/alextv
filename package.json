@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "Alex-TV",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "La TV italiana che vogliamo indietro",
   "version": "0.1.0",
   "license": "0BSD",
   "scripts": {
@@ -15,15 +15,23 @@
   },
   "dependencies": {
     "gatsby": "^3.13.1",
+    "gatsby-plugin-image": "^1.14.0",
+    "gatsby-plugin-manifest": "^3.14.0",
+    "gatsby-plugin-react-helmet": "^4.14.0",
+    "gatsby-plugin-sharp": "^3.14.0",
+    "gatsby-plugin-sitemap": "^4.10.0",
+    "gatsby-source-filesystem": "^3.14.0",
+    "gatsby-transformer-sharp": "^3.14.0",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0"
   },
   "devDependencies": {
     "prettier": "2.3.2"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
+    "url": "https://github.com/PaoloCatalano/alextv"
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
