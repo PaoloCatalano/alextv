@@ -2,7 +2,7 @@ require("dotenv").config()
 const axios = require("axios")
 
 export default async function playlist(req, res) {
-  const url = `https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&part=status&playlistId=PLzc14R1Ecr9CummAOR3Dm9z3CT2iJ07WC&maxResults=50&key=${process.env.TY_KEY}`
+  const url = `https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&part=status&pageToken=EAEaBlBUOkNHUQ&playlistId=PLzc14R1Ecr9CummAOR3Dm9z3CT2iJ07WC&maxResults=200&key=${process.env.TY_KEY}`
 
   const method = req.method
 

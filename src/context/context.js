@@ -9,6 +9,7 @@ const Provider = ({ children }) => {
   const [cambioCanale, setCambioCanale] = React.useState(false)
   const [numeroCanale, setNumeroCanale] = React.useState(1)
   const [touchable, setTouchable] = React.useState(true)
+  const [modaltouch, setModalTouch] = React.useState(false)
 
   return (
     <Context.Provider
@@ -25,6 +26,8 @@ const Provider = ({ children }) => {
         setNumeroCanale,
         touchable,
         setTouchable,
+        modaltouch,
+        setModalTouch,
       }}
     >
       {children}

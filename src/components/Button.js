@@ -14,11 +14,13 @@ export default function Button({ searchChannels }) {
     setNumeroCanale,
     touchable,
     setTouchable,
+    modaltouch,
+    setModalTouch,
   } = useGlobalContext()
 
   function handleNumeroCanale() {
     setNumeroCanale(() => {
-      if (numeroCanale >= 99) {
+      if (numeroCanale >= 9) {
         return 1
       } else {
         return numeroCanale + 1
@@ -31,9 +33,18 @@ export default function Button({ searchChannels }) {
       setCambioCanale(false)
     }, 3000)
   }
+  function modalHidden() {
+    setModalTouch(true)
+    setTimeout(() => {
+      setModalTouch(false)
+    }, 2000)
+  }
 
   return (
     <div className="buttons">
+      <div className={modaltouch ? "modal-touch" : "modal-touch hidden"}>
+        <span> Touch Screen {touchable ? "ON" : "OFF"}</span>
+      </div>
       <button onClick={() => setautoplay(!autoplay)}>
         <FaPowerOff style={{ color: autoplay ? "var(--blue-logo)" : "red" }} />
       </button>
@@ -58,6 +69,8 @@ export default function Button({ searchChannels }) {
         disabled={!autoplay}
         onClick={() => {
           setTouchable(!touchable)
+
+          modalHidden()
         }}
       >
         <MdTouchApp

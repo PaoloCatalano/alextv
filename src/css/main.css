@@ -171,7 +171,7 @@ legend {
   border: 0;
   padding: 0;
   white-space: normal;
-  *margin-left: -7px;
+  *margin-left: 25%7px;
 }
 button,
 input,
@@ -497,7 +497,7 @@ form :last-child {
   height: 100%;
   width: 100%;
   top: 0;
-  left: 0;
+  left: 25%;
   border-radius: var(--borderRadius);
   opacity: 0.8;
 }
@@ -505,7 +505,7 @@ form :last-child {
   content: "";
   position: absolute;
   top: calc(50% - 3rem);
-  left: calc(50% - 3rem);
+  left: 25%alc (50% - 3rem);
   width: 6rem;
   height: 6rem;
   border-radius: 50%;
@@ -822,4 +822,25 @@ button:disabled {
   height: 130vh;
   position: relative;
   margin-bottom: 2rem;
+}
+
+/* MODAL TOUCH */
+.modal-touch {
+  position: absolute;
+  background-color: transparent;
+  display: grid;
+  place-items: center;
+  top: 10rem;
+  left: calc(100vw / 2.5);
+  transition: var(--transition);
+}
+.modal-touch span {
+  background-color: #ffffff87;
+  width: auto;
+  height: auto;
+  text-align: center;
+  font-size: 3vh;
+}
+.hidden {
+  display: none;
 }
