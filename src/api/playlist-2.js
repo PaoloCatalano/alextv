@@ -1,10 +1,11 @@
 require("dotenv").config()
 const axios = require("axios")
 
-export default async function playlist(req, res) {
-  const url = `https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&part=status&pageToken=EAEaBlBUOkNHUQ&playlistId=PLzc14R1Ecr9CummAOR3Dm9z3CT2iJ07WC&maxResults=200&key=${process.env.TY_KEY}`
+export default async function playlist2(req, res) {
+  const url = `https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&part=status&pageToken=EAEaBlBUOkNHUQ&maxResults=200&key=${process.env.TY_KEY}&playlistId=PLzc14R1Ecr9A63eMiyBLH7aX9ZB5m5z1f`
 
   const method = req.method
+  console.log(req.headers.channel)
 
   if (method !== "GET") {
     res.status(405).json({ mgs: "Only Get requests allowed!" })

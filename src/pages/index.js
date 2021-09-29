@@ -1,34 +1,23 @@
 import React from "react"
 import Layout from "../components/Layout"
-import Title from "../components/Title"
 import Video from "../components/Video"
-import axios from "axios"
 import { useGlobalContext } from "../context/context"
 import Button from "../components/Button"
 
 export default function Videos() {
-  const { videos, setVideos, videosIdList, setVideosIdList, autoplay } =
-    useGlobalContext()
+  const {
+    videos,
+    // setVideos,
+    // numeroCanale,
+    videosIdList,
+    setVideosIdList,
+    autoplay,
+    searchChannels,
+  } = useGlobalContext()
 
-  async function searchChannels() {
-    try {
-      const { data } = await axios.get("../api/playlist").then()
-      const playlist = data.items
-        .filter(({ status }) => status.privacyStatus === "public")
-        .sort(() => (Math.random() > 0.5 ? 1 : -1))
-        .map(({ snippet }) => {
-          return {
-            // title: snippet.title,
-            videoId: snippet.resourceId.videoId,
-          }
-        })
-      setVideos(playlist)
-    } catch (error) {
-      console.log("error is: " + error)
-    }
-  }
   React.useEffect(() => {
     searchChannels()
+    // eslint-disable-next-line
   }, [autoplay])
 
   React.useEffect(() => {
@@ -38,6 +27,7 @@ export default function Videos() {
       })
       .join(",")
     setVideosIdList(tempList)
+    // eslint-disable-next-line
   }, [videos])
 
   const playlistUrl = `https://www.youtube.com/embed/videoseries?autoplay=${autoplay}&controls=0&rel=0&showinfo=0&loop=1&listType=playlist&playlist=${videosIdList}`
@@ -56,7 +46,7 @@ export default function Videos() {
           </>
         )}
       </div>
-      <Button searchChannels={searchChannels} />
+      <Button />
     </Layout>
   )
 }

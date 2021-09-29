@@ -1,4 +1,5 @@
 import React, { createContext, useContext } from "react"
+import axios from "axios"
 
 const Context = createContext()
 
@@ -10,6 +11,28 @@ const Provider = ({ children }) => {
   const [numeroCanale, setNumeroCanale] = React.useState(1)
   const [touchable, setTouchable] = React.useState(true)
   const [modaltouch, setModalTouch] = React.useState(false)
+
+  async function searchChannels() {
+    try {
+      const { data } = await axios.get(`../api/getPlaylist`, {
+        headers: {
+          channel: numeroCanale,
+        },
+      })
+      const playlist = data.items
+        .filter(({ status }) => status.privacyStatus === "public")
+        .sort(() => (Math.random() > 0.5 ? 1 : -1))
+        .map(({ snippet }) => {
+          return {
+            // title: snippet.title,
+            videoId: snippet.resourceId.videoId,
+          }
+        })
+      setVideos(playlist)
+    } catch (error) {
+      console.log("error is: " + error)
+    }
+  }
 
   return (
     <Context.Provider
@@ -28,6 +51,7 @@ const Provider = ({ children }) => {
         setTouchable,
         modaltouch,
         setModalTouch,
+        searchChannels,
       }}
     >
       {children}
@@ -39,17 +63,6 @@ export const useGlobalContext = () => {
   return useContext(Context)
 }
 // import { useGlobalContext } from '../context/context'
-// const { videos,
-//         setVideos,
-//         videosIdList,
-//         setVideosIdList,
-//         autoplay,
-//         setautoplay,
-//         cambioCanale,
-//         setCambioCanale,
-//         numeroCanale,
-//         setNumeroCanale,
-//         touchable,
-//         setTouchable } = useGlobalContext()
+// const { videos, setTouchable } = useGlobalContext()
 
 export { Context, Provider }

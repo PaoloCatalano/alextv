@@ -563,7 +563,7 @@ form :last-child {
 }
 /* PAGES */
 main {
-  height: 93vh;
+  height: 100%;
   width: 100%;
   display: grid;
   place-items: center;
@@ -577,7 +577,7 @@ main {
 .navbar {
   background-color: transparent;
   position: absolute;
-  z-index: 9;
+  /* z-index: -1; */
 }
 .nav-links {
   display: flex;
@@ -630,17 +630,30 @@ footer a {
   color: var(--green);
   font-weight: bold;
 }
-/* BUTTONS */
+/* action BUTTONS */
 .buttons {
-  z-index: 9;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  /* z-index: 9; */
+  display: grid;
+  grid: 1fr auto / 1fr;
   font-size: 2rem;
   width: 300px;
   justify-content: space-evenly;
+  border: 2px solid var(--blue-2-logo);
+  padding: 1rem 0.3rem;
 }
-
+.on-touch {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  grid: 1fr / auto auto;
+  justify-content: space-evenly;
+}
+.tastierino {
+  margin: 2rem;
+  display: grid;
+  grid: repeat(3, auto) / repeat(3, auto);
+  gap: 0.5rem;
+}
 button:active {
   transform: scale(0.7);
 }
@@ -654,6 +667,7 @@ button:disabled {
 .iframeVideoWrapper,
 .video-placeholder {
   /* TV */
+  z-index: -1;
   --tv-max-width: 1000px;
   margin: 0 auto;
   width: 100%;
@@ -668,7 +682,6 @@ button:disabled {
   background-size: contain; /* Resize the background image to cover the entire container */
   position: relative;
   background-color: var(--bg-logo);
-  border: 2px var(--bg-dark-logo) solid;
 }
 .slogan {
   position: absolute;
@@ -681,22 +694,27 @@ button:disabled {
   animation: flip 3s step-start infinite;
 }
 @keyframes flip {
-  3% {
-    color: var(--bg-logo);
+  0% {
+    color: var(--blue-logo);
   }
-
+  55% {
+    color: var(--blue-logo);
+  }
   60% {
+    color: transparent;
+  }
+
+  63% {
+    color: var(--blue-logo);
+  }
+  90% {
     color: var(--blue-logo);
   }
 
-  94% {
-    color: var(--blue-logo);
-  }
-
-  95% {
+  93% {
     color: red;
   }
-  97% {
+  96% {
     color: green;
   }
   100% {
@@ -709,7 +727,7 @@ button:disabled {
 }
 
 .blend {
-  z-index: 99;
+  /* z-index: -1; */
   border: none;
   max-width: none;
   max-height: none;
