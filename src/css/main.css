@@ -278,7 +278,8 @@ table {
   --green: #008037;
   /* LOGO */
   --blue-logo: #3168d8;
-  --blue-2-logo: #0e2249;
+  --blue-buttons: #052047;
+  --blue-2-logo: #062551;
   --yellow-logo: #ffde59;
   --bg-logo: #051d40;
   --bg-dark-logo: #051731;
@@ -374,6 +375,7 @@ button,
   appearance: none;
   color: var(--yellow-logo);
   background: var(--green-logo);
+  background: var(--blue-buttons);
   border: none;
   border-radius: var(--borderRadius);
   letter-spacing: var(--letterSpacing);
@@ -577,7 +579,7 @@ main {
 .navbar {
   background-color: transparent;
   position: absolute;
-  /* z-index: -1; */
+  z-index: 1;
 }
 .nav-links {
   display: flex;
@@ -640,6 +642,7 @@ footer a {
   justify-content: space-evenly;
   border: 2px solid var(--blue-2-logo);
   padding: 1rem 0.3rem;
+  border-radius: var(--borderRadius);
 }
 .on-touch {
   width: 100%;
@@ -653,6 +656,9 @@ footer a {
   display: grid;
   grid: repeat(3, auto) / repeat(3, auto);
   gap: 0.5rem;
+}
+.tastierino button {
+  box-shadow: var(--shadow-3);
 }
 button:active {
   transform: scale(0.7);
@@ -683,6 +689,7 @@ button:disabled {
   position: relative;
   background-color: var(--bg-logo);
 }
+
 .slogan {
   position: absolute;
   bottom: 1rem;
@@ -849,7 +856,8 @@ button:disabled {
   display: grid;
   place-items: center;
   top: 10rem;
-  left: calc(100vw / 2.5);
+  left: 0;
+  width: 100vw;
   transition: var(--transition);
 }
 .modal-touch span {
@@ -858,6 +866,8 @@ button:disabled {
   height: auto;
   text-align: center;
   font-size: 3vh;
+  padding: 0.3rem;
+  border-radius: var(--borderRadius);
 }
 .hidden {
   display: none;

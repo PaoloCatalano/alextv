@@ -25,7 +25,7 @@ export default function Tastierino() {
         return (
           <button
             style={{
-              color: cambioCanale ? "grey" : "var(--yellow-logo)",
+              color: cambioCanale || !autoplay ? "grey" : "var(--yellow-logo)",
             }}
             key={index}
             disabled={!autoplay || cambioCanale}
