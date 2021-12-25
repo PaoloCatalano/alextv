@@ -8,6 +8,7 @@ export default function Tastierino() {
     setCambioCanale,
     setNumeroCanale,
     searchChannels,
+    setLoading,
   } = useGlobalContext()
 
   function cambiandoCanale() {
@@ -31,12 +32,15 @@ export default function Tastierino() {
             disabled={!autoplay || cambioCanale}
             onMouseDown={() => {
               setNumeroCanale(number)
+              setLoading(true)
             }}
             onTouchStart={() => {
               setNumeroCanale(number)
+              setLoading(true)
             }}
             onKeyDown={() => {
               setNumeroCanale(number)
+              setLoading(true)
             }}
             onClick={() => {
               cambiandoCanale()

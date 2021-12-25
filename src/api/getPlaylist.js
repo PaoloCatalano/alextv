@@ -25,7 +25,6 @@ export default async function getPlaylist(req, res) {
 
   try {
     const { data } = await axios.get(url)
-
     res.status(200).json(data)
   } catch (error) {
     console.log(error)

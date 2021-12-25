@@ -29,7 +29,10 @@ export default function Button() {
       <div className="on-touch">
         <button onClick={() => setautoplay(!autoplay)}>
           <FaPowerOff
-            style={{ color: autoplay ? "var(--blue-logo)" : "red" }}
+            style={{
+              color: autoplay ? "var(--blue-logo)" : "var(--red)",
+              transform: "translate(1px,4px)",
+            }}
           />
         </button>
 
@@ -43,10 +46,11 @@ export default function Button() {
         >
           <MdTouchApp
             style={{
-              color:
-                touchable && autoplay
-                  ? "var(--blue-logo)"
-                  : "var(--black-logo)",
+              color: !autoplay
+                ? "var(--black-logo)"
+                : touchable && autoplay
+                ? "var(--yellow-logo)"
+                : "var(--blue-logo)",
             }}
           />{" "}
         </button>

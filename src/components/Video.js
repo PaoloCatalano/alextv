@@ -9,11 +9,13 @@ const Video = ({ src, title, ...props }) => {
         <p
           style={{
             position: "absolute",
-            right: "1rem",
+            right: "0.5rem",
             top: "-54px",
-            color: "green",
+            color: "var(--green)",
             fontSize: "3rem",
             zIndex: 99999,
+            fontWeight: 700,
+            textShadow: "2px 2px 1.5px var(--grey-1000)",
           }}
         >
           {numeroCanale}

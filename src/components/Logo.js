@@ -5,7 +5,7 @@ export default function Logo({ width = 80 }) {
   return (
     <div style={{ width }}>
       <StaticImage
-        src="../images/ALEXtvOLD.png"
+        src="../images/ALEXtvScreen.png"
         alt="Alex Tv"
         placeholder="blurred"
         layout="fullWidth"

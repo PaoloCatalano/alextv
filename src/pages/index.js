@@ -13,10 +13,12 @@ export default function Videos() {
     setVideosIdList,
     autoplay,
     searchChannels,
+    loading,
   } = useGlobalContext()
 
   React.useEffect(() => {
     searchChannels()
+
     // eslint-disable-next-line
   }, [autoplay])
 
@@ -32,6 +34,19 @@ export default function Videos() {
 
   const playlistUrl = `https://www.youtube.com/embed/videoseries?autoplay=${autoplay}&controls=0&rel=0&showinfo=0&loop=1&listType=playlist&playlist=${videosIdList}`
 
+  if (loading) {
+    return (
+      <Layout>
+        <div className="screen">
+          <>
+            <div className="video-placeholder fuzzy" />
+          </>
+        </div>
+        <Button />
+      </Layout>
+    )
+  }
+
   return (
     <Layout>
       <div className="screen">
@@ -43,6 +58,7 @@ export default function Videos() {
               <div className="slogan">La TV che rivogliamo!</div>
             </div>
             <div className=" video-placeholder blend"></div>
+            <div className="fuzzy stripe"></div>
           </>
         )}
       </div>

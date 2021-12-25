@@ -273,9 +273,9 @@ table {
   --red-dark: #842029;
   --green-light: #d1e7dd;
   --green-dark: #0f5132;
-  --red: #ff1616;
+  --red: #ff0044;
   --yellow: #ffd51e;
-  --green: #008037;
+  --green: #47b300;
   /* LOGO */
   --blue-logo: #3168d8;
   --blue-buttons: #052047;
@@ -729,8 +729,14 @@ button:disabled {
   }
 }
 .screen {
-  height: 80vh;
+  height: 75vh;
   width: 100%;
+}
+
+@media screen and (min-height: 1200px) {
+  .screen {
+    height: 60vh;
+  }
 }
 
 .blend {
@@ -746,7 +752,20 @@ button:disabled {
   background-position: 0 0rem;
   animation: ctr 3s infinite ease-in-out;
 }
-
+.fuzzy {
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/fuzzy.gif");
+  background-position: center; /* Center the image */
+  background-repeat: repeat; /* Do not repeat the image */
+  background-size: inherit; /* Resize the background image to cover the entire container */
+}
+.stripe {
+  animation: ctr 3s infinite ease-in-out;
+  position: absolute;
+  top: 0;
+  height: 0.2rem;
+}
 @keyframes ctr {
   10% {
     top: 3rem;
