@@ -15,7 +15,7 @@ export default function Tastierino() {
     setCambioCanale(true)
     setTimeout(() => {
       setCambioCanale(false)
-    }, 3000)
+    }, 2000)
   }
 
   const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -32,17 +32,15 @@ export default function Tastierino() {
             disabled={!autoplay || cambioCanale}
             onMouseDown={() => {
               setNumeroCanale(number)
-              setLoading(true)
             }}
             onTouchStart={() => {
               setNumeroCanale(number)
-              setLoading(true)
             }}
             onKeyDown={() => {
               setNumeroCanale(number)
-              setLoading(true)
             }}
             onClick={() => {
+              setLoading(true)
               cambiandoCanale()
               searchChannels()
             }}
