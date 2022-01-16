@@ -6,7 +6,7 @@
 const siteMetadata = {
   title: "Alex TV",
   titleTemplate: "Alex TV · %s ",
-  description: "Alex Tv - La TV italiano che rivogliamo indietro!!",
+  description: "Alex Tv - La TV italiana che rivogliamo indietro!!",
   siteUrl: "https://alextv.netlify.app", // No trailing slash allowed!
   image: "/ALEXtv.png", // Path to your image you placed in the 'static' folder
   twitterUsername: "@PaoroCatarano",

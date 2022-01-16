@@ -2,7 +2,7 @@ import React from "react"
 import { useGlobalContext } from "../context/context"
 
 const Video = ({ src, title, ...props }) => {
-  const { touchable, numeroCanale } = useGlobalContext()
+  const { touchable, numeroCanale, loading } = useGlobalContext()
   return (
     <div className="iframeVideoWrapper">
       <div className="video">
@@ -20,18 +20,24 @@ const Video = ({ src, title, ...props }) => {
         >
           {numeroCanale}
         </p>
-        <iframe
-          style={{ pointerEvents: touchable ? "auto" : "none" }}
-          width="100%"
-          height="100%"
-          src={src}
-          title={title}
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          frameBorder="0"
-          webkitallowfullscreen="true"
-          mozallowfullscreen="true"
-          allowFullScreen
-        />
+        {loading ? (
+          <div className="screen">
+            <div className="video-placeholder fuzzy" />
+          </div>
+        ) : (
+          <iframe
+            style={{ pointerEvents: touchable ? "auto" : "none" }}
+            width="100%"
+            height="100%"
+            src={src}
+            title={title}
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            frameBorder="0"
+            webkitallowfullscreen="true"
+            mozallowfullscreen="true"
+            allowFullScreen
+          />
+        )}
       </div>
     </div>
   )

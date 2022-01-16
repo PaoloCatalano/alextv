@@ -3,6 +3,7 @@ import Layout from "../components/Layout"
 import Video from "../components/Video"
 import { useGlobalContext } from "../context/context"
 import Button from "../components/Button"
+import { FaPowerOff } from "react-icons/fa"
 
 export default function Videos() {
   const {
@@ -13,7 +14,6 @@ export default function Videos() {
     setVideosIdList,
     autoplay,
     searchChannels,
-    loading,
   } = useGlobalContext()
 
   React.useEffect(() => {
@@ -34,19 +34,6 @@ export default function Videos() {
 
   const playlistUrl = `https://www.youtube.com/embed/videoseries?autoplay=${autoplay}&controls=0&rel=0&showinfo=0&loop=1&listType=playlist&playlist=${videosIdList}`
 
-  if (loading) {
-    return (
-      <Layout>
-        <div className="screen">
-          <>
-            <div className="video-placeholder fuzzy" />
-          </>
-        </div>
-        <Button />
-      </Layout>
-    )
-  }
-
   return (
     <Layout>
       <div className="screen">
@@ -55,7 +42,13 @@ export default function Videos() {
         ) : (
           <>
             <div className="video-placeholder">
-              <div className="slogan">La TV che rivogliamo!</div>
+              <div className="slogan fixing-text">
+                Premi{" "}
+                <span>
+                  <FaPowerOff />
+                </span>{" "}
+                e viaggia indietro nel tempo!
+              </div>
             </div>
             <div className=" video-placeholder blend"></div>
             <div className="fuzzy stripe"></div>
