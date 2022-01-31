@@ -734,7 +734,7 @@ button:disabled {
   width: 100%;
 }
 
-@media screen and (min-height: 1200px) {
+@media screen and (min-height: 1100px) {
   .screen {
     height: 60vh;
   }
@@ -748,7 +748,6 @@ button:disabled {
   position: absolute;
   mix-blend-mode: hard-light;
   background-size: cover;
-  height: 5rem;
   top: 0rem;
   background-position: 0 0rem;
   animation: ctr 3s infinite ease-in-out;
@@ -838,6 +837,10 @@ button:disabled {
   border-radius: var(--radius);
 }
 
+.blend {
+  height: 5rem;
+}
+
 @media screen and (max-width: 540px) {
   .video {
     height: 70%;
@@ -848,11 +851,11 @@ button:disabled {
   .slogan {
     font-size: 1.5rem;
   }
-  .screen {
+  .screen-resize {
     height: 100%;
   }
-  .iframeVideoWrapper,
-  .video-placeholder {
+  .iframeVideoWrapper-resize,
+  .video-placeholder-resize {
     height: 140%;
   }
 }

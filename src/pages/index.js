@@ -36,12 +36,18 @@ export default function Videos() {
 
   return (
     <Layout>
-      <div className="screen">
+      <div className={` ${autoplay ? "screen screen-resize" : "screen"}`}>
         {autoplay ? (
           <Video src={playlistUrl} />
         ) : (
           <>
-            <div className="video-placeholder">
+            <div
+              className={` ${
+                autoplay
+                  ? "video-placeholder video-placeholder-resize"
+                  : "video-placeholder"
+              }`}
+            >
               <div className="slogan fixing-text">
                 Premi{" "}
                 <span>

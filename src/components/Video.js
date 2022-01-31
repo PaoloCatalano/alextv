@@ -2,9 +2,15 @@ import React from "react"
 import { useGlobalContext } from "../context/context"
 
 const Video = ({ src, title, ...props }) => {
-  const { touchable, numeroCanale, loading } = useGlobalContext()
+  const { touchable, numeroCanale, loading, autoplay } = useGlobalContext()
   return (
-    <div className="iframeVideoWrapper">
+    <div
+      className={` ${
+        autoplay
+          ? "iframeVideoWrapper iframeVideoWrapper-resize"
+          : "iframeVideoWrapper"
+      }`}
+    >
       <div className="video">
         <p
           style={{

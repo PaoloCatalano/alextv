@@ -1,5 +1,6 @@
 import React, { createContext, useContext } from "react"
 import axios from "axios"
+import { shuffle } from "lodash"
 
 const Context = createContext()
 
@@ -20,16 +21,19 @@ const Provider = ({ children }) => {
           channel: numeroCanale,
         },
       })
+
       const playlist = data.items
         .filter(({ status }) => status.privacyStatus === "public")
-        .sort(() => (Math.random() > 0.5 ? 1 : -1))
+        // .sort(() => (Math.random() > 0.5 ? 1 : -1))
         .map(({ snippet }) => {
           return {
             // title: snippet.title,
             videoId: snippet.resourceId.videoId,
           }
         })
-      setVideos(playlist)
+
+      //Lodash shuffle func
+      setVideos(shuffle(playlist))
     } catch (error) {
       console.log("There is an error: " + error)
     } finally {
