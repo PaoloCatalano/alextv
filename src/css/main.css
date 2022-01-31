@@ -913,7 +913,7 @@ button:disabled {
     font-size: 2vw;
   }
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1100px) {
   .fixing-text {
     font-size: 4vw;
   }
