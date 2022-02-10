@@ -12,6 +12,8 @@ export default function Button() {
     setTouchable,
     modaltouch,
     setModalTouch,
+    cambiandoCanale,
+    cambioCanale,
   } = useGlobalContext()
 
   function modalHidden() {
@@ -23,11 +25,22 @@ export default function Button() {
 
   return (
     <div className="buttons">
+      <div className="led-box">
+        <div
+          className={cambioCanale ? "led-red led-blink-effect " : "led-red"}
+        />
+      </div>
       <div className={modaltouch ? "modal-touch" : "modal-touch hidden"}>
         <span> Touch Screen {touchable ? "ON" : "OFF"}</span>
       </div>
       <div className="on-touch">
-        <button onClick={() => setautoplay(!autoplay)}>
+        <button
+          onClick={() => {
+            setautoplay(!autoplay)
+
+            cambiandoCanale()
+          }}
+        >
           <FaPowerOff
             style={{
               color: autoplay ? "var(--blue-logo)" : "var(--red)",

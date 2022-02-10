@@ -27,7 +27,7 @@ const Video = ({ src, title, ...props }) => {
           {numeroCanale}
         </p>
         {loading ? (
-          <div className="screen">
+          <div className="screen resize">
             <div className="video-placeholder fuzzy" />
           </div>
         ) : (

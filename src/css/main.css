@@ -636,6 +636,7 @@ footer a {
 /* action BUTTONS */
 .buttons {
   /* z-index: 9; */
+  position: relative;
   display: grid;
   grid: 1fr auto / 1fr;
   font-size: 2rem;
@@ -644,6 +645,8 @@ footer a {
   border: 2px solid var(--blue-2-logo);
   padding: 1rem 0.3rem;
   border-radius: var(--borderRadius);
+  background-color: var(--bg-logo);
+  box-shadow: var(--shadow-1), var(--shadow-3);
 }
 .on-touch {
   width: 100%;
@@ -858,6 +861,10 @@ button:disabled {
   .video-placeholder-resize {
     height: 140%;
   }
+  .resize {
+    /* height: ~52vh; */
+    height: 100%;
+  }
 }
 
 @media screen and (min-width: 901px) {
@@ -916,5 +923,102 @@ button:disabled {
 @media screen and (max-width: 1100px) {
   .fixing-text {
     font-size: 4vw;
+  }
+}
+
+/* RED LED */
+
+.led-box {
+  height: 30px;
+  width: 25%;
+  margin: 10px 0;
+  float: left;
+  z-index: -1;
+  position: absolute;
+  left: 110px;
+  top: -19px;
+}
+
+.led-red {
+  margin: 0 auto;
+  width: 18px;
+  height: 17px;
+  background-color: #6b0000;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px,
+    rgba(255, 0, 0, 0.5) 0 2px 12px;
+}
+
+.led-blink-effect {
+  -webkit-animation: blinkRed 0.1s infinite;
+  -moz-animation: blinkRed 0.1s infinite;
+  -ms-animation: blinkRed 0.1s infinite;
+  -o-animation: blinkRed 0.1s infinite;
+  animation: blinkRed 0.1s infinite;
+}
+
+@-webkit-keyframes blinkRed {
+  from {
+    background-color: #f00;
+  }
+  50% {
+    background-color: #a00;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px,
+      rgba(255, 0, 0, 0.5) 0 2px 0;
+  }
+  to {
+    background-color: #f00;
+  }
+}
+@-moz-keyframes blinkRed {
+  from {
+    background-color: #f00;
+  }
+  50% {
+    background-color: #a00;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px,
+      rgba(255, 0, 0, 0.5) 0 2px 0;
+  }
+  to {
+    background-color: #f00;
+  }
+}
+@-ms-keyframes blinkRed {
+  from {
+    background-color: #f00;
+  }
+  50% {
+    background-color: #a00;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px,
+      rgba(255, 0, 0, 0.5) 0 2px 0;
+  }
+  to {
+    background-color: #f00;
+  }
+}
+@-o-keyframes blinkRed {
+  from {
+    background-color: #f00;
+  }
+  50% {
+    background-color: #a00;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px,
+      rgba(255, 0, 0, 0.5) 0 2px 0;
+  }
+  to {
+    background-color: #f00;
+  }
+}
+@keyframes blinkRed {
+  from {
+    background-color: #f00;
+  }
+  50% {
+    background-color: #a00;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px,
+      rgba(255, 0, 0, 0.5) 0 2px 0;
+  }
+  to {
+    background-color: #f00;
   }
 }

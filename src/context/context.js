@@ -41,6 +41,13 @@ const Provider = ({ children }) => {
     }
   }
 
+  function cambiandoCanale() {
+    setCambioCanale(true)
+    setTimeout(() => {
+      setCambioCanale(false)
+    }, 500)
+  }
+
   return (
     <Context.Provider
       value={{
@@ -61,6 +68,7 @@ const Provider = ({ children }) => {
         searchChannels,
         loading,
         setLoading,
+        cambiandoCanale,
       }}
     >
       {children}

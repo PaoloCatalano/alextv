@@ -5,18 +5,11 @@ export default function Tastierino() {
   const {
     autoplay,
     cambioCanale,
-    setCambioCanale,
+    cambiandoCanale,
     setNumeroCanale,
     searchChannels,
     setLoading,
   } = useGlobalContext()
-
-  function cambiandoCanale() {
-    setCambioCanale(true)
-    setTimeout(() => {
-      setCambioCanale(false)
-    }, 2000)
-  }
 
   const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
