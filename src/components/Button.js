@@ -1,8 +1,10 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { useGlobalContext } from "../context/context"
 import { FaPowerOff } from "react-icons/fa"
 import { MdTouchApp } from "react-icons/md"
 import Tastierino from "./Tastierino"
+import useAnimation from "../utils/useAnimation"
+import useKeyPress from "../utils/useKeyPress"
 
 export default function Button() {
   const {
@@ -23,8 +25,24 @@ export default function Button() {
     }, 2000)
   }
 
+  const animation = useAnimation("elastic", 900, 50)
+
+  const on = useKeyPress("Enter")
+
+  useEffect(() => {
+    if (on) {
+      setautoplay(!autoplay)
+      cambiandoCanale()
+    }
+  }, [on])
+
   return (
-    <div className="buttons">
+    <div
+      className="buttons"
+      style={{
+        marginTop: animation * 800 - 800,
+      }}
+    >
       <div className="led-box">
         <div
           className={cambioCanale ? "led-red led-blink-effect " : "led-red"}

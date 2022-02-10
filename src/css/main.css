@@ -383,11 +383,13 @@ button,
   box-shadow: var(--shadow-1);
   transition: var(--transition);
   text-transform: capitalize;
+  border: 1px solid var(--bg-logo);
 }
 button:hover,
 .btn:hover {
-  background: var(--blue-2-logo);
+  background: var(--bg-logo);
   box-shadow: var(--shadow-2);
+  border: 1px solid var(--bg-dark-logo);
 }
 button.small {
   padding: 0.25rem 0.5rem;
@@ -642,11 +644,12 @@ footer a {
   font-size: 2rem;
   width: 300px;
   justify-content: space-evenly;
-  border: 2px solid var(--blue-2-logo);
+  border: 2px solid var(--bg-dark-logo);
   padding: 1rem 0.3rem;
   border-radius: var(--borderRadius);
-  background-color: var(--bg-logo);
+  background-color: var(--blue-2-logo);
   box-shadow: var(--shadow-1), var(--shadow-3);
+  margin-top: -55rem;
 }
 .on-touch {
   width: 100%;

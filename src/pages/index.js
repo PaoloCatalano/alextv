@@ -53,7 +53,7 @@ export default function Videos() {
                 <span>
                   <FaPowerOff />
                 </span>{" "}
-                e viaggia indietro nel tempo!
+                o<span> ↵ </span>per viaggiare nel tempo!
               </div>
             </div>
             <div className=" video-placeholder blend"></div>
