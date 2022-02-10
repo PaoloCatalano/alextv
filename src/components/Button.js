@@ -25,7 +25,7 @@ export default function Button() {
     }, 2000)
   }
 
-  const animation = useAnimation("elastic", 900, 50)
+  const animation = useAnimation("elastic", 900, 0)
 
   const on = useKeyPress("Enter")
 
